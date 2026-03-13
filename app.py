@@ -13,7 +13,7 @@ st.caption("Educational use only. Predictions are approximate.")
 # -----------------------------
 # Load model artifacts
 # -----------------------------
-model = tf.keras.models.load_model("artifacts/housing_model.h5")
+model = tf.keras.models.load_model("artifacts/housing_model.h5", compile=False)
 scaler = joblib.load("artifacts/scaler.pkl")
 features = joblib.load("artifacts/feature_names.pkl")
 
@@ -55,3 +55,4 @@ if st.button("Predict"):
     pred_value = pred_value * 10000
     
     st.success(f"Estimated appraised value: ${pred_value:,.0f}")
+
